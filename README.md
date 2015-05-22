@@ -1,8 +1,8 @@
 # cordova-plugin-alipay
-cordova-plugin-alipay
+支付宝插件
 
 
-添加插件 cordova plugin add 插件目录路径
+添加插件：运行命令 cordova plugin add 插件目录路径
 
 
 配置ios端：
