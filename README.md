@@ -8,21 +8,21 @@ cordova-plugin-alipay
 配置ios端：
 
 	1.启动IDE（如Xcode），plugin下 libs的库，并导入到项目工程中。
-	AlipaySDK.bundle
-	AlipaySDK.framework
-	libcrypto.a
-	libssl.a
+	  AlipaySDK.bundle
+	  AlipaySDK.framework
+	  libcrypto.a
+	  libssl.a
 
 	2.将alipayUtil 文件夹放到plugin目录下，并在xcode中添加，记得选中group。即在xcode中显示为黄色文件夹
 
 	3.点击项目名称，点击“Build Settings”选项卡，在搜索框中，以关键字“search”搜索，
-	对“Header Search Paths”增加头文件路径：$(SRCROOT)/项目名称，后面选择recursive 。
-	如果头文件信息已增加，可不必再增加。 （如果不添加，会报头文件找不到错误）
+	  对“Header Search Paths”增加头文件路径：$(SRCROOT)/项目名称，后面选择recursive 。
+	  如果头文件信息已增加，可不必再增加。 （如果不添加，会报头文件找不到错误）
 
-	4.点击项目名称，点击“Build Phases”选项卡，在“Link Binary with Librarles”选项中，新增“AlipaySDK.framework”，“SystemConfiguration.framework”，    security.framework 系统库文件。
-	如果项目中已有这几个库文件，可不必再增加。(如果不添加，会报link arm64 等错误)
+	4.点击项目名称，点击“Build Phases”选项卡，在“Link Binary with    Librarles”选项中，新增“AlipaySDK.framework”，“SystemConfiguration.framework”，    security.framework 系统库文件。
+	  如果项目中已有这几个库文件，可不必再增加。(如果不添加，会报link arm64 等错误)
 
-	5.配置url Scheme（点击项目名称，点击“Info”选项卡，在“URL Types”选项中，点击“+”，在“URL Schemes”中输入“XXXXXX”。“XXXXXX”来自于文件Keys.h） （用于支付结束后的回调），需于代码中的Keys.h 中 urlSceheme一样
+	5.配置url Scheme（点击项目名称，点击“Info”选项卡，在“URL Types”选项中，点击“+”，在“URL  Schemes”中输入“XXXXXX”。“XXXXXX”来自于文件Keys.h） （用于支付结束后的回调），需于代码中的Keys.h 中 urlSceheme一样
 		
 	6.appdelegate中添加 
 		if ([url.host isEqualToString:@"safepay"]) {
