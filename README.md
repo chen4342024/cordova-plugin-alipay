@@ -10,8 +10,8 @@
 	1.启动IDE（如Xcode），plugin下 libs的库，并导入到项目工程中。
 	  AlipaySDK.bundle
 	  AlipaySDK.framework
-	  libcrypto.a
-	  libssl.a
+	  //libcrypto.a
+	  //libssl.a
 
 	2.将alipayUtil 文件夹放到plugin目录下，并在xcode中添加，记得选中group。即在xcode中显示为黄色文件夹
 
@@ -24,7 +24,7 @@
 
 	5.配置url Scheme（点击项目名称，点击“Info”选项卡，在“URL Types”选项中，点击“+”，在“URL  Schemes”中输入“XXXXXX”。“XXXXXX”来自于文件Keys.h） （用于支付结束后的回调），需于代码中的Keys.h 中 urlSceheme一样
 		
-	6.appdelegate中添加 
+	6.appdelegate中添加  openURL方法里面
 		if ([url.host isEqualToString:@"safepay"]) {
 			
 			[[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
